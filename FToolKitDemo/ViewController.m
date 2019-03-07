@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "FToolKitWindow.h"
+#import "FToolKit.h"
 
 @interface ViewController ()
 
@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[FToolKitWindow shareInstance] show];
+    [[FToolKit shareInstance] show];
 
 }
 

@@ -1,5 +1,5 @@
 //
-//  FToolKitWindow.h
+//  FToolKit.h
 //  FToolKitDemo
 //
 //  Created by 武建明 on 2019/2/20.
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FToolKitWindow : UIView
+@interface FToolKit : UIView
 
-+ (FToolKitWindow *)shareInstance;
++ (FToolKit *)shareInstance;
 
 @property (nonatomic) CGRect limitRect;//View所能活动的区域范围，包括四个方向的临界
 @property (nonatomic) CGRect deletedRect;//View所能活动的区域范围，包括四个方向的临界

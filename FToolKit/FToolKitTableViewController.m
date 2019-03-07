@@ -7,7 +7,7 @@
 //
 
 #import "FToolKitTableViewController.h"
-#import "FToolKitWindow.h"
+#import "FToolKit.h"
 #if __has_include(<FHHFPSIndicator/FHHFPSIndicator.h>)
 #import <FHHFPSIndicator/FHHFPSIndicator.h>
 #else
@@ -38,7 +38,7 @@
 }
 - (void)cancle {
     [self dismissViewControllerAnimated:YES completion:^{
-        [FToolKitWindow shareInstance].hidden = NO;
+        [FToolKit shareInstance].hidden = NO;
     }];
 }
 

@@ -1,17 +1,16 @@
 //
-//  FToolKitWindow.m
-//  FToolKitDemo
+//  FToolKit.m
 //
 //  Created by 武建明 on 2019/2/20.
 //  Copyright © 2019 武建明. All rights reserved.
 //
 
-#import "FToolKitWindow.h"
+#import "FToolKit.h"
 #import "FToolKitDefine.h"
 #import "FToolKitTableViewController.h"
 
-#define FToolKitWindowWidth  44
-#define FToolKitWindowHeight 44
+#define FToolKitWidth  44
+#define FToolKitHeight 44
 #define TAG_ToolKit (110554)
 #define TAG_ToolKitMNAV (110553)
 
@@ -20,7 +19,7 @@ static const CGFloat kUIAutoHideTimeInterval = 3.0;//UI显示时间
 
 static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
 
-@interface FToolKitWindow () {
+@interface FToolKit () {
     CGPoint lastPoint;
 }
 
@@ -30,13 +29,13 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
 
 @end
 
-@implementation FToolKitWindow
+@implementation FToolKit
 
-+ (FToolKitWindow *)shareInstance{
++ (FToolKit *)shareInstance{
     static dispatch_once_t once;
-    static FToolKitWindow *instance;
+    static FToolKit *instance;
     dispatch_once(&once, ^{
-        instance = [[FToolKitWindow alloc] initWithFrame:CGRectMake(FToolKitScreenWidth-FToolKitWindowWidth*2, FToolKitScreenHeight-FToolKitWindowWidth*4, FToolKitWindowWidth, FToolKitWindowHeight)];
+        instance = [[FToolKit alloc] initWithFrame:CGRectMake(FToolKitScreenWidth-FToolKitWidth*2, FToolKitScreenHeight-FToolKitWidth*4, FToolKitWidth, FToolKitHeight)];
         instance.tag = TAG_ToolKit;
     });
     return instance;
@@ -63,7 +62,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
         _iconLabel.backgroundColor = [UIColor clearColor];
         _iconLabel.font = [UIFont systemFontOfSize:20];
         _iconLabel.textAlignment = NSTextAlignmentCenter;
-        _iconLabel.layer.cornerRadius = FToolKitWindowHeight/2;
+        _iconLabel.layer.cornerRadius = FToolKitHeight/2;
         _iconLabel.layer.masksToBounds = YES;
         _iconLabel.layer.borderWidth = 1.5;
         _iconLabel.layer.borderColor = [UIColor blueColor].CGColor;
@@ -73,8 +72,8 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
 - (void)defaultConfig {
     [self addGesture];
     self.userInteractionEnabled = YES;
-    self.limitRect = CGRectMake(0, IPHONE_NAVIGATIONBAR_HEIGHT, FToolKitScreenWidth, FToolKitScreenHeight-IPHONE_STATUSBAR_HEIGHT-IPHONE_SAFEBOTTOMAREA_HEIGHT-FToolKitWindowHeight-2*FToolKitWindowWidth);
-    self.deletedRect = CGRectMake(0, FToolKitScreenHeight-2*FToolKitWindowWidth, FToolKitScreenWidth, 2*FToolKitWindowWidth);
+    self.limitRect = CGRectMake(0, IPHONE_NAVIGATIONBAR_HEIGHT, FToolKitScreenWidth, FToolKitScreenHeight-IPHONE_STATUSBAR_HEIGHT-IPHONE_SAFEBOTTOMAREA_HEIGHT-FToolKitHeight-2*FToolKitWidth);
+    self.deletedRect = CGRectMake(0, FToolKitScreenHeight-2*FToolKitWidth, FToolKitScreenWidth, 2*FToolKitWidth);
     self.adsorptionTop = NO;
     self.adsorptionBottom = NO;
 }
@@ -176,41 +175,41 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
         CGFloat newX = currentCenter.x;
         CGFloat newY = currentCenter.y;
         //1、处理边界位置的情况
-        if(currentCenter.x<(self.limitRect.origin.x + FToolKitWindowWidth*0.5f)){
+        if(currentCenter.x<(self.limitRect.origin.x + FToolKitWidth*0.5f)){
             //太靠左
-            newX = (self.limitRect.origin.x + FToolKitWindowWidth*0.5f);
+            newX = (self.limitRect.origin.x + FToolKitWidth*0.5f);
         }
-        if(currentCenter.x > (CGRectGetMaxX(self.limitRect) - FToolKitWindowWidth*0.5f)){
+        if(currentCenter.x > (CGRectGetMaxX(self.limitRect) - FToolKitWidth*0.5f)){
             //太靠右
-            newX = (CGRectGetMaxX(self.limitRect) - FToolKitWindowWidth*0.5f);
+            newX = (CGRectGetMaxX(self.limitRect) - FToolKitWidth*0.5f);
         }
         
-        if(currentCenter.y < (self.limitRect.origin.y + FToolKitWindowHeight*0.5f)){
+        if(currentCenter.y < (self.limitRect.origin.y + FToolKitHeight*0.5f)){
             //太靠上
-            newY =  (self.limitRect.origin.y + FToolKitWindowHeight*0.5f);
+            newY =  (self.limitRect.origin.y + FToolKitHeight*0.5f);
         }
-        if(currentCenter.y > (CGRectGetMaxY(self.limitRect)- FToolKitWindowHeight*0.5f)){
+        if(currentCenter.y > (CGRectGetMaxY(self.limitRect)- FToolKitHeight*0.5f)){
             //太靠下
-            newY =  (CGRectGetMaxY(self.limitRect) - FToolKitWindowHeight*0.5f);
+            newY =  (CGRectGetMaxY(self.limitRect) - FToolKitHeight*0.5f);
         }
         
         //处理是在左侧还是在右侧
         if(currentCenter.x <= CGRectGetMidX(self.limitRect)){//在区域的左侧
             if(dyT <= dyB && dxL > dyT && self.adsorptionTop){//顶部
-                newY = (self.limitRect.origin.y + FToolKitWindowHeight*0.5f);
+                newY = (self.limitRect.origin.y + FToolKitHeight*0.5f);
             }else if(dyT > dyB && dxL > dyB && self.adsorptionBottom){//底部
-                newY =  (CGRectGetMaxY(self.limitRect) - FToolKitWindowHeight*0.5f);
+                newY =  (CGRectGetMaxY(self.limitRect) - FToolKitHeight*0.5f);
             }else{
-                newX = (self.limitRect.origin.x + FToolKitWindowWidth*0.5f);
+                newX = (self.limitRect.origin.x + FToolKitWidth*0.5f);
             }
             
         }else{//在区域右侧
             if(dyT <= dyB && dxR > dyT && self.adsorptionTop){//顶部
-                newY =  (self.limitRect.origin.y + FToolKitWindowHeight*0.5f);
+                newY =  (self.limitRect.origin.y + FToolKitHeight*0.5f);
             }else if(dyT > dyB && dxR > dyB && self.adsorptionBottom){//底部
-                newY =  (CGRectGetMaxY(self.limitRect) - FToolKitWindowHeight*0.5f);
+                newY =  (CGRectGetMaxY(self.limitRect) - FToolKitHeight*0.5f);
             }else{
-                newX = (CGRectGetMaxX(self.limitRect) - FToolKitWindowWidth*0.5f);
+                newX = (CGRectGetMaxX(self.limitRect) - FToolKitWidth*0.5f);
             }
         }
         
@@ -227,7 +226,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
         for (UIView *view in keyWindow.subviews) {
-            if ([view isKindOfClass:[FToolKitWindow class]] && view.tag == TAG_ToolKit) {
+            if ([view isKindOfClass:[FToolKit class]] && view.tag == TAG_ToolKit) {
                 return;
             }
         }
