@@ -1,0 +1,56 @@
+PODS:
+  - FHHFPSIndicator (1.0.2)
+  - FLEX (2.4.0)
+  - FToolKit (1.0):
+    - FHHFPSIndicator
+    - FLEX (~> 2.0)
+    - RealmBrowserKit
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmBrowserKit (0.0.1):
+    - Realm
+    - TODocumentPickerViewController
+    - TORoundedTableView
+    - TOSplitViewController
+  - TODocumentPickerViewController (0.2.2):
+    - TOSearchBar
+  - TORoundedTableView (0.1.3)
+  - TOSearchBar (1.0.3)
+  - TOSplitViewController (0.0.5)
+
+DEPENDENCIES:
+  - FHHFPSIndicator
+  - FLEX (~> 2.0)
+  - FToolKit (from `.`)
+  - RealmBrowserKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FHHFPSIndicator
+    - FLEX
+    - Realm
+    - RealmBrowserKit
+    - TODocumentPickerViewController
+    - TORoundedTableView
+    - TOSearchBar
+    - TOSplitViewController
+
+EXTERNAL SOURCES:
+  FToolKit:
+    :path: "."
+
+SPEC CHECKSUMS:
+  FHHFPSIndicator: 29d986402ea729a941a3cda184e3635d1def69ae
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
+  FToolKit: a1441e44f9672178b084ee84b09cbd0cb80678c8
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmBrowserKit: e1c8a3e9c332740d03e6d16028386a64e96ba063
+  TODocumentPickerViewController: 8c0eaf3b72a4f9970f8d82c3069bb71636f6c207
+  TORoundedTableView: cd1437ef81ab3888dea8c06d2dfe4795bcaac768
+  TOSearchBar: ee22b7ade729521b6ace523cea0ce97d23ab3cd9
+  TOSplitViewController: 4a1884c97955d75ab2b64b07f44533ceef871498
+
+PODFILE CHECKSUM: b3be7a981ce942ad311f611cdd91fc369b25b536
+
+COCOAPODS: 1.5.3

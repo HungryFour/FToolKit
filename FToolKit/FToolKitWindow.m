@@ -12,6 +12,8 @@
 
 #define FToolKitWindowWidth  44
 #define FToolKitWindowHeight 44
+#define TAG_ToolKit (110554)
+#define TAG_ToolKitMNAV (110553)
 
 
 static const CGFloat kUIAutoHideTimeInterval = 3.0;//UI显示时间
@@ -35,7 +37,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
     static FToolKitWindow *instance;
     dispatch_once(&once, ^{
         instance = [[FToolKitWindow alloc] initWithFrame:CGRectMake(FToolKitScreenWidth-FToolKitWindowWidth*2, FToolKitScreenHeight-FToolKitWindowWidth*4, FToolKitWindowWidth, FToolKitWindowHeight)];
-        [instance setRootViewController:[UIViewController new]];
+        instance.tag = TAG_ToolKit;
     });
     return instance;
 }
@@ -44,7 +46,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor= [UIColor whiteColor];
-        self.windowLevel=UIWindowLevelAlert+1;
+//        self.windowLevel=UIWindowLevelAlert+1;
         self.backgroundColor = [UIColor clearColor];
         [self defaultConfig];
         [self addSubview:self.iconLabel];
@@ -71,7 +73,8 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
 - (void)defaultConfig {
     [self addGesture];
     self.userInteractionEnabled = YES;
-    self.limitRect = CGRectMake(0, IPHONE_NAVIGATIONBAR_HEIGHT, FToolKitScreenWidth, FToolKitScreenHeight-IPHONE_STATUSBAR_HEIGHT-IPHONE_SAFEBOTTOMAREA_HEIGHT);
+    self.limitRect = CGRectMake(0, IPHONE_NAVIGATIONBAR_HEIGHT, FToolKitScreenWidth, FToolKitScreenHeight-IPHONE_STATUSBAR_HEIGHT-IPHONE_SAFEBOTTOMAREA_HEIGHT-FToolKitWindowHeight-2*FToolKitWindowWidth);
+    self.deletedRect = CGRectMake(0, FToolKitScreenHeight-2*FToolKitWindowWidth, FToolKitScreenWidth, 2*FToolKitWindowWidth);
     self.adsorptionTop = NO;
     self.adsorptionBottom = NO;
 }
@@ -115,11 +118,15 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
 }
 
 - (void)showTableViewController {
-    UIWindow *appWindow = [[UIApplication sharedApplication].delegate window];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIViewController *rootController = window.rootViewController;
+    if ([rootController.presentedViewController isKindOfClass:[UINavigationController class]] && (rootController.presentedViewController.view.tag==TAG_ToolKitMNAV)) {
+        return;
+    }
     self.hidden = YES;
-    [appWindow.rootViewController presentViewController:[[UINavigationController alloc] initWithRootViewController:[[FToolKitTableViewController alloc] init]] animated:YES completion:^{
-        
-    }];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[FToolKitTableViewController alloc] init]];
+    nav.view.tag = TAG_ToolKitMNAV;
+    [rootController presentViewController:nav animated:YES completion:nil];
 }
 
 /* 自动展示UI */
@@ -141,8 +148,24 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
         //拖动过程中
         self.center = CGPointMake(self.center.x + panPoint.x-lastPoint.x, self.center.y+panPoint.y-lastPoint.y);
         lastPoint = CGPointMake(panPoint.x, panPoint.y);
+        
+        if (CGRectContainsPoint(self.deletedRect, self.center)) {
+            self.iconLabel.text = @"删";
+            self.iconLabel.textColor = [UIColor redColor];
+        }else{
+            self.iconLabel.text = @"调";
+            self.iconLabel.textColor = [UIColor greenColor];
+        }
+        
     } else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        //拖动结束，释放，此时需要根据位置，将图片恢复到边缘位置
+        
+        // 如果拖动结束后,在删除区域,则进入毁灭程序
+        if (CGRectContainsPoint(self.deletedRect, self.center)) {
+            [self remove];
+            return;
+        }
+        
+        //拖动结束，释放，此时需要根据位置，将self恢复到边缘位置
         //根据当前中心点的坐标，超过限定区域的一半，则在右侧，否则在左侧
         CGPoint endPoint ;
         CGPoint currentCenter = CGPointMake(self.center.x + panPoint.x-lastPoint.x, self.center.y+panPoint.y-lastPoint.y);
@@ -194,16 +217,26 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
         endPoint = CGPointMake(newX, newY);
         [UIView animateWithDuration:0.2 animations:^{
             self.center = endPoint;
+        } completion:^(BOOL finished) {
         }];
     }
 }
 
 - (void)show {
-    [self makeKeyAndVisible];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
+        for (UIView *view in keyWindow.subviews) {
+            if ([view isKindOfClass:[FToolKitWindow class]] && view.tag == TAG_ToolKit) {
+                return;
+            }
+        }
+        [keyWindow addSubview:self];
+    });
 }
 
 - (void)remove {
-    [self resignKeyWindow];
+    [self removeFromSuperview];
 }
 
 @end

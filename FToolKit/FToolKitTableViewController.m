@@ -8,6 +8,24 @@
 
 #import "FToolKitTableViewController.h"
 #import "FToolKitWindow.h"
+#if __has_include(<FHHFPSIndicator/FHHFPSIndicator.h>)
+#import <FHHFPSIndicator/FHHFPSIndicator.h>
+#else
+#import "FHHFPSIndicator.h"
+#endif
+
+#if __has_include(<FLEX/FLEX.h>)
+#import <FLEX/FLEX.h>
+#else
+#import "FLEX.h"
+#endif
+
+#if __has_include(<RealmBrowserKit/RealmBrowserKit.h>)
+#import <RealmBrowserKit/RLMBrowserViewController.h>
+#else
+#import "RLMBrowserViewController.h"
+#endif
+
 @interface FToolKitTableViewController ()
 
 @end
@@ -19,14 +37,13 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancle)];
 }
 - (void)cancle {
-    [[FToolKitWindow shareInstance] setHidden:NO];
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        [FToolKitWindow shareInstance].hidden = NO;
     }];
 }
 
 - (NSArray *)titleArray{
-    return @[@"FLEX", @"Realm Browser"];
+    return @[@"FLEX", @"FHHFPSIndicator", @"Realm Browser"];
 }
 #pragma mark - Table view data source
 
@@ -39,26 +56,51 @@
     static NSString *cellID = @"FToolKitCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellID];
+        cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:cellID];
     }
     cell.textLabel.text = [[self titleArray] objectAtIndex:indexPath.row];
+    
+    if (indexPath.row == 0) {
+        if ([[FHHFPSIndicator sharedFPSIndicator] isShowingFps]) {
+            cell.detailTextLabel.text = @"关闭";
+        }else{
+            cell.detailTextLabel.text = @"打开";
+        }
+    }else if (indexPath.row == 1) {
+        if (![[FLEXManager sharedManager] isHidden]) {
+            cell.detailTextLabel.text = @"关闭";
+        }else{
+            cell.detailTextLabel.text = @"打开";
+        }
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    switch (indexPath.row) {
-        case 0:
-            NSLog(@"显示FLEX");
-            break;
-        case 1:
-            NSLog(@"打开Realm Browser");
-            break;
-        default:
-            break;
+
+    if (indexPath.row == 0) {
+        if (![[FHHFPSIndicator sharedFPSIndicator] isShowingFps]) {
+            [[FHHFPSIndicator sharedFPSIndicator] show];
+            [[FHHFPSIndicator sharedFPSIndicator] setFpsLabelColor:[UIColor redColor]];
+            [FHHFPSIndicator sharedFPSIndicator].fpsLabelPosition = FPSIndicatorPositionBottomCenter;
+        }else {
+            [[FHHFPSIndicator sharedFPSIndicator] hide];
+        }
+        [self cancle];
+    }else if (indexPath.row == 1) {
+        if ([[FLEXManager sharedManager] isHidden]) {
+            [[FLEXManager sharedManager] showExplorer];
+        }else {
+            [[FLEXManager sharedManager] hideExplorer];
+        }
+        [self cancle];
+    }else if (indexPath.row == 2) {
+        RLMBrowserViewController *controller = [[RLMBrowserViewController alloc] init];
+        [self presentViewController:controller animated:YES completion:^{
+            
+        }];
     }
-    
 }
 
 @end

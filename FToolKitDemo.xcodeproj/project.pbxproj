@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91956B24DA5ADB2E47927DAD /* libPods-FToolKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF5A88DCC014FA801454300 /* libPods-FToolKitDemo.a */; };
 		B67B56FC221D7E1000469518 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B56FB221D7E1000469518 /* AppDelegate.m */; };
 		B67B56FF221D7E1000469518 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B56FE221D7E1000469518 /* ViewController.m */; };
 		B67B5702221D7E1000469518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67B5700221D7E1000469518 /* Main.storyboard */; };
@@ -15,9 +16,8 @@
 		B67B570A221D7E1100469518 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B5709221D7E1100469518 /* main.m */; };
 		B67B5714221D7E1100469518 /* FToolKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B5713221D7E1100469518 /* FToolKitDemoTests.m */; };
 		B67B571F221D7E1100469518 /* FToolKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B571E221D7E1100469518 /* FToolKitDemoUITests.m */; };
-		B67B573D221D862D00469518 /* FToolKitWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B5738221D862D00469518 /* FToolKitWindow.m */; };
-		B67B573E221D862D00469518 /* FToolKitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B573B221D862D00469518 /* FToolKitUtil.m */; };
-		B67B5741221D89C600469518 /* FToolKitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B5740221D89C600469518 /* FToolKitTableViewController.m */; };
+		B67B5744221D936C00469518 /* FToolKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B67B5742221D936B00469518 /* FToolKit.podspec */; };
+		B67B5745221D936C00469518 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B67B5743221D936C00469518 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		67AE946F869D0A21C51C6D28 /* Pods-FToolKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FToolKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B67B56F7221D7E1000469518 /* FToolKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FToolKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67B56FA221D7E1000469518 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B67B56FB221D7E1000469518 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,13 +55,10 @@
 		B67B571A221D7E1100469518 /* FToolKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FToolKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67B571E221D7E1100469518 /* FToolKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FToolKitDemoUITests.m; sourceTree = "<group>"; };
 		B67B5720221D7E1100469518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B67B5738221D862D00469518 /* FToolKitWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FToolKitWindow.m; sourceTree = "<group>"; };
-		B67B5739221D862D00469518 /* FToolKitUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FToolKitUtil.h; sourceTree = "<group>"; };
-		B67B573A221D862D00469518 /* FToolKitWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FToolKitWindow.h; sourceTree = "<group>"; };
-		B67B573B221D862D00469518 /* FToolKitUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FToolKitUtil.m; sourceTree = "<group>"; };
-		B67B573C221D862D00469518 /* FToolKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FToolKitDefine.h; sourceTree = "<group>"; };
-		B67B573F221D89C600469518 /* FToolKitTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FToolKitTableViewController.h; sourceTree = "<group>"; };
-		B67B5740221D89C600469518 /* FToolKitTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FToolKitTableViewController.m; sourceTree = "<group>"; };
+		B67B5742221D936B00469518 /* FToolKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FToolKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B67B5743221D936C00469518 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CEF5A88DCC014FA801454300 /* libPods-FToolKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FToolKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0EF3D76D4FE5D9DA10936C /* Pods-FToolKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FToolKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91956B24DA5ADB2E47927DAD /* libPods-FToolKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,14 +87,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020F4262B63EEE4E953CE86F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEF5A88DCC014FA801454300 /* libPods-FToolKitDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7322B5A9B2EE04A395128834 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA0EF3D76D4FE5D9DA10936C /* Pods-FToolKitDemo.debug.xcconfig */,
+				67AE946F869D0A21C51C6D28 /* Pods-FToolKitDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B67B56EE221D7E1000469518 = {
 			isa = PBXGroup;
 			children = (
-				B67B5737221D862D00469518 /* FToolKit */,
+				B67B5742221D936B00469518 /* FToolKit.podspec */,
+				B67B5743221D936C00469518 /* README.md */,
 				B67B56F9221D7E1000469518 /* FToolKitDemo */,
 				B67B5712221D7E1100469518 /* FToolKitDemoTests */,
 				B67B571D221D7E1100469518 /* FToolKitDemoUITests */,
 				B67B56F8221D7E1000469518 /* Products */,
+				7322B5A9B2EE04A395128834 /* Pods */,
+				020F4262B63EEE4E953CE86F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,20 +162,6 @@
 			path = FToolKitDemoUITests;
 			sourceTree = "<group>";
 		};
-		B67B5737221D862D00469518 /* FToolKit */ = {
-			isa = PBXGroup;
-			children = (
-				B67B573C221D862D00469518 /* FToolKitDefine.h */,
-				B67B5739221D862D00469518 /* FToolKitUtil.h */,
-				B67B573B221D862D00469518 /* FToolKitUtil.m */,
-				B67B573A221D862D00469518 /* FToolKitWindow.h */,
-				B67B5738221D862D00469518 /* FToolKitWindow.m */,
-				B67B573F221D89C600469518 /* FToolKitTableViewController.h */,
-				B67B5740221D89C600469518 /* FToolKitTableViewController.m */,
-			);
-			path = FToolKit;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B67B5723221D7E1100469518 /* Build configuration list for PBXNativeTarget "FToolKitDemo" */;
 			buildPhases = (
+				C52A0E7A6C54DE143874354F /* [CP] Check Pods Manifest.lock */,
 				B67B56F3221D7E1000469518 /* Sources */,
 				B67B56F4221D7E1000469518 /* Frameworks */,
 				B67B56F5221D7E1000469518 /* Resources */,
+				69D66C0297A19B0CC28F3403 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,7 +267,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67B5744221D936C00469518 /* FToolKit.podspec in Resources */,
 				B67B5707221D7E1100469518 /* LaunchScreen.storyboard in Resources */,
+				B67B5745221D936C00469518 /* README.md in Resources */,
 				B67B5704221D7E1100469518 /* Assets.xcassets in Resources */,
 				B67B5702221D7E1000469518 /* Main.storyboard in Resources */,
 			);
@@ -282,17 +291,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69D66C0297A19B0CC28F3403 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/EmptyContentViews/RLMBrowserEmptyContentView.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/FooterView/RLMBrowserSchemaPreviewView.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/HeaderViews/RLMBrowserNavigationTitleView.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/HeaderViews/RLMBrowserRealmHeaderView.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/ObjectListTableViewCell/RLMBrowserObjectListContentView.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/ObjectTableViewCellContentView/RLMBrowserObjectContentView.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/PropertyTableViewCell/RLMBrowserPropertyTableViewCell.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/RealmSchemaTableViewCell/RLMBrowserSchemaTableViewCell.xib",
+				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/RealmTableViewCell/RLMBrowserRealmTableViewCell.xib",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TOSearchBar/TOSearchBarBundle.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserEmptyContentView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserSchemaPreviewView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserNavigationTitleView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserRealmHeaderView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserObjectListContentView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserObjectContentView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserPropertyTableViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserSchemaTableViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserRealmTableViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TOSearchBarBundle.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C52A0E7A6C54DE143874354F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FToolKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B67B56F3221D7E1000469518 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B67B573E221D862D00469518 /* FToolKitUtil.m in Sources */,
 				B67B56FF221D7E1000469518 /* ViewController.m in Sources */,
 				B67B570A221D7E1100469518 /* main.m in Sources */,
 				B67B56FC221D7E1000469518 /* AppDelegate.m in Sources */,
-				B67B573D221D862D00469518 /* FToolKitWindow.m in Sources */,
-				B67B5741221D89C600469518 /* FToolKitTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +532,7 @@
 		};
 		B67B5724221D7E1100469518 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA0EF3D76D4FE5D9DA10936C /* Pods-FToolKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -477,6 +549,7 @@
 		};
 		B67B5725221D7E1100469518 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67AE946F869D0A21C51C6D28 /* Pods-FToolKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
