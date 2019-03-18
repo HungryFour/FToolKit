@@ -11,7 +11,7 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) UILabel *iconLabel;
+@property (strong, nonatomic) UIImageView *testImageView;
 
 @end
 
@@ -23,22 +23,15 @@
     
     [[FToolKit shareInstance] show];
     
-    [self.view addSubview:self.iconLabel];
+    [self.view addSubview:self.testImageView];
 
 }
 
-- (UILabel *)iconLabel {
-    if (!_iconLabel) {
-        _iconLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-        _iconLabel.text = @"调";
-        _iconLabel.textColor = [UIColor greenColor];
-        _iconLabel.backgroundColor = [UIColor grayColor];
-        _iconLabel.font = [UIFont systemFontOfSize:20];
-        _iconLabel.textAlignment = NSTextAlignmentCenter;
-        _iconLabel.layer.masksToBounds = YES;
-        _iconLabel.layer.borderWidth = 1.5;
-        _iconLabel.layer.borderColor = [UIColor blueColor].CGColor;
+- (UIImageView *)testImageView {
+    if (!_testImageView) {
+        _testImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        _testImageView.image = [UIImage imageNamed:@"test"];
     }
-    return _iconLabel;
+    return _testImageView;
 }
 @end

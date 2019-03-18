@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (FToolKit *)shareInstance;
 
 @property (nonatomic) CGRect limitRect;//View所能活动的区域范围，包括四个方向的临界
-@property (nonatomic) CGRect deletedRect;//View所能活动的区域范围，包括四个方向的临界
+@property (nonatomic) CGRect deletedRect;//删除区域
 @property (nonatomic, assign) BOOL adsorptionTop;//能否吸附顶部
 @property (nonatomic, assign) BOOL adsorptionBottom;//能否吸附底部
 @property (nonatomic, assign) CGFloat limitX;//左右距离活动区域边界,默认40

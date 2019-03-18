@@ -21,8 +21,9 @@
 #import "RLMBrowserViewController.h"
 #endif
 
-#import "FColorPickView.h"
+#import "FColorPickKit.h"
 #import "FToolKitFHHFPSIndicator.h"
+#import "FToolKitAlignKit.h"
 
 @interface FToolKitTableViewController ()
 
@@ -41,7 +42,7 @@
 }
 
 - (NSArray *)titleArray{
-    return @[@"FLEX", @"FHHFPSIndicator", @"Realm Browser", @"取色"];
+    return @[@"帧率", @"组件检查", @"Realm数据库", @"颜色吸管", @"对齐标尺"];
 }
 #pragma mark - Table view data source
 
@@ -66,6 +67,12 @@
         }
     }else if (indexPath.row == 1) {
         if (![[FLEXManager sharedManager] isHidden]) {
+            cell.detailTextLabel.text = @"关闭";
+        }else{
+            cell.detailTextLabel.text = @"打开";
+        }
+    }else if (indexPath.row == 4) {
+        if ([[FToolKitAlignKit shareInstance] isShowing]) {
             cell.detailTextLabel.text = @"关闭";
         }else{
             cell.detailTextLabel.text = @"打开";
@@ -99,8 +106,15 @@
             
         }];
     }else if (indexPath.row == 3) {
-        [[FColorPickView shareInstance] show];
+        [[FColorPickKit shareInstance] show];
         [self cancle];
+    }else if (indexPath.row == 4) {
+        if ([[FToolKitAlignKit shareInstance] isShowing]) {
+            [[FToolKitAlignKit shareInstance] remove];
+        }else{
+            [self cancle];
+            [[FToolKitAlignKit shareInstance] show];
+        }
     }
 }
 
