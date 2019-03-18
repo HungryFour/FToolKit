@@ -301,6 +301,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh",
+				"${PODS_ROOT}/../FToolKit/FToolKit.bundle",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/EmptyContentViews/RLMBrowserEmptyContentView.xib",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/FooterView/RLMBrowserSchemaPreviewView.xib",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/HeaderViews/RLMBrowserNavigationTitleView.xib",
@@ -316,6 +317,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FToolKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserEmptyContentView.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserSchemaPreviewView.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserNavigationTitleView.nib",

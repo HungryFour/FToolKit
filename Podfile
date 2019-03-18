@@ -8,7 +8,7 @@ target 'FToolKitDemo' do
   # Pods for FToolKitDemo
      pod 'FToolKit', :path => '.'
      pod 'FLEX', '~> 2.0'
-     pod 'FHHFPSIndicator'
+     pod 'MLeaksFinder'
      pod 'RealmBrowserKit'
 end
 

@@ -16,8 +16,8 @@
 
 
 static const CGFloat kUIAutoHideTimeInterval = 3.0;//UI显示时间
-
 static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
+
 
 @interface FToolKit () {
     CGPoint lastPoint;
@@ -35,10 +35,14 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
     static dispatch_once_t once;
     static FToolKit *instance;
     dispatch_once(&once, ^{
-        instance = [[FToolKit alloc] initWithFrame:CGRectMake(FToolKitScreenWidth-FToolKitWidth*2, FToolKitScreenHeight-FToolKitWidth*4, FToolKitWidth, FToolKitHeight)];
+        instance = [[FToolKit alloc] initWithFrame:[self originFrame]];
         instance.tag = TAG_ToolKit;
     });
     return instance;
+}
+
++ (CGRect)originFrame {
+    return CGRectMake(FToolKitScreenWidth-FToolKitWidth*2, FToolKitScreenHeight-FToolKitWidth*4, FToolKitWidth, FToolKitHeight);
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -230,6 +234,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
                 return;
             }
         }
+        self.frame = [FToolKit originFrame];
         [keyWindow addSubview:self];
     });
 }

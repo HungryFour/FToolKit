@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) UILabel *iconLabel;
+
 @end
 
 @implementation ViewController
@@ -20,8 +22,23 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [[FToolKit shareInstance] show];
+    
+    [self.view addSubview:self.iconLabel];
 
 }
 
-
+- (UILabel *)iconLabel {
+    if (!_iconLabel) {
+        _iconLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+        _iconLabel.text = @"调";
+        _iconLabel.textColor = [UIColor greenColor];
+        _iconLabel.backgroundColor = [UIColor grayColor];
+        _iconLabel.font = [UIFont systemFontOfSize:20];
+        _iconLabel.textAlignment = NSTextAlignmentCenter;
+        _iconLabel.layer.masksToBounds = YES;
+        _iconLabel.layer.borderWidth = 1.5;
+        _iconLabel.layer.borderColor = [UIColor blueColor].CGColor;
+    }
+    return _iconLabel;
+}
 @end

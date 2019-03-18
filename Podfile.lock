@@ -1,10 +1,11 @@
 PODS:
-  - FHHFPSIndicator (1.0.2)
+  - FBRetainCycleDetector (0.1.4)
   - FLEX (2.4.0)
-  - FToolKit (1.1):
-    - FHHFPSIndicator
+  - FToolKit (1.1.2):
     - FLEX (~> 2.0)
     - RealmBrowserKit
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
   - Realm/Headers (3.13.1)
@@ -20,15 +21,16 @@ PODS:
   - TOSplitViewController (0.0.5)
 
 DEPENDENCIES:
-  - FHHFPSIndicator
   - FLEX (~> 2.0)
   - FToolKit (from `.`)
+  - MLeaksFinder
   - RealmBrowserKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - FHHFPSIndicator
+    - FBRetainCycleDetector
     - FLEX
+    - MLeaksFinder
     - Realm
     - RealmBrowserKit
     - TODocumentPickerViewController
@@ -41,9 +43,10 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  FHHFPSIndicator: 29d986402ea729a941a3cda184e3635d1def69ae
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
-  FToolKit: 0e3b52d942ecc39ce6e3397a88152d078ab5f614
+  FToolKit: 608215a8e0e4bc9db247f94806265b6d934ede5a
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmBrowserKit: e1c8a3e9c332740d03e6d16028386a64e96ba063
   TODocumentPickerViewController: 8c0eaf3b72a4f9970f8d82c3069bb71636f6c207
@@ -51,6 +54,6 @@ SPEC CHECKSUMS:
   TOSearchBar: ee22b7ade729521b6ace523cea0ce97d23ab3cd9
   TOSplitViewController: 4a1884c97955d75ab2b64b07f44533ceef871498
 
-PODFILE CHECKSUM: b3be7a981ce942ad311f611cdd91fc369b25b536
+PODFILE CHECKSUM: 4c36efe6ff749100f678e5968420c0b0d1edc917
 
 COCOAPODS: 1.5.3

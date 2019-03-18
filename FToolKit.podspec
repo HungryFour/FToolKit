@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                   = 'FToolKit'
-  s.version                = '1.1.1'
+  s.version                = '1.1.2'
   s.description            = 'iOS Debug Tools'
   s.summary                = 'iOS Debug Tools'
   s.homepage               = 'https://github.com/wjmwjmwb/FToolKit'
@@ -13,6 +13,5 @@ Pod::Spec.new do |s|
   s.requires_arc           = true
   s.dependency 'RealmBrowserKit'
   s.dependency 'FLEX', '~> 2.0'
-  s.dependency 'FHHFPSIndicator'
-
+  s.resources    = 'FToolKit/FToolKit.bundle'
 end

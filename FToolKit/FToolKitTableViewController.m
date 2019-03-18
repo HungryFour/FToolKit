@@ -8,11 +8,6 @@
 
 #import "FToolKitTableViewController.h"
 #import "FToolKit.h"
-#if __has_include(<FHHFPSIndicator/FHHFPSIndicator.h>)
-#import <FHHFPSIndicator/FHHFPSIndicator.h>
-#else
-#import "FHHFPSIndicator.h"
-#endif
 
 #if __has_include(<FLEX/FLEX.h>)
 #import <FLEX/FLEX.h>
@@ -25,6 +20,9 @@
 #else
 #import "RLMBrowserViewController.h"
 #endif
+
+#import "FColorPickView.h"
+#import "FToolKitFHHFPSIndicator.h"
 
 @interface FToolKitTableViewController ()
 
@@ -43,7 +41,7 @@
 }
 
 - (NSArray *)titleArray{
-    return @[@"FLEX", @"FHHFPSIndicator", @"Realm Browser"];
+    return @[@"FLEX", @"FHHFPSIndicator", @"Realm Browser", @"取色"];
 }
 #pragma mark - Table view data source
 
@@ -61,7 +59,7 @@
     cell.textLabel.text = [[self titleArray] objectAtIndex:indexPath.row];
     
     if (indexPath.row == 0) {
-        if ([[FHHFPSIndicator sharedFPSIndicator] isShowingFps]) {
+        if ([[FToolKitFHHFPSIndicator sharedIndicator] isShowingFps]) {
             cell.detailTextLabel.text = @"关闭";
         }else{
             cell.detailTextLabel.text = @"打开";
@@ -80,12 +78,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     if (indexPath.row == 0) {
-        if (![[FHHFPSIndicator sharedFPSIndicator] isShowingFps]) {
-            [[FHHFPSIndicator sharedFPSIndicator] show];
-            [[FHHFPSIndicator sharedFPSIndicator] setFpsLabelColor:[UIColor redColor]];
-            [FHHFPSIndicator sharedFPSIndicator].fpsLabelPosition = FPSIndicatorPositionBottomCenter;
+        if (![[FToolKitFHHFPSIndicator sharedIndicator] isShowingFps]) {
+            [[FToolKitFHHFPSIndicator sharedIndicator] show];
+            [[FToolKitFHHFPSIndicator sharedIndicator] setFpsLabelColor:[UIColor redColor]];
+            [FToolKitFHHFPSIndicator sharedIndicator].fpsLabelPosition = FToolKitFPSIndicatorPositionTopLeft;
         }else {
-            [[FHHFPSIndicator sharedFPSIndicator] hide];
+            [[FToolKitFHHFPSIndicator sharedIndicator] hide];
         }
         [self cancle];
     }else if (indexPath.row == 1) {
@@ -100,6 +98,9 @@
         [self presentViewController:controller animated:YES completion:^{
             
         }];
+    }else if (indexPath.row == 3) {
+        [[FColorPickView shareInstance] show];
+        [self cancle];
     }
 }
 
