@@ -301,7 +301,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh",
-				"${PODS_ROOT}/../FToolKit/FToolKit.bundle",
+				"${PODS_ROOT}/../FToolKit.bundle",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/EmptyContentViews/RLMBrowserEmptyContentView.xib",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/FooterView/RLMBrowserSchemaPreviewView.xib",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/HeaderViews/RLMBrowserNavigationTitleView.xib",

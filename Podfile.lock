@@ -1,7 +1,7 @@
 PODS:
   - FBRetainCycleDetector (0.1.4)
   - FLEX (2.4.0)
-  - FToolKit (1.1.2):
+  - FToolKit (1.2.1):
     - FLEX (~> 2.0)
     - RealmBrowserKit
   - MLeaksFinder (1.0.0):
@@ -45,7 +45,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
-  FToolKit: 608215a8e0e4bc9db247f94806265b6d934ede5a
+  FToolKit: 1318188ee026d8288b79a04e15f0b1871b4740c7
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmBrowserKit: e1c8a3e9c332740d03e6d16028386a64e96ba063
