@@ -133,14 +133,14 @@ static CGFloat const kAmplificationSize = 125;
         _amplificationWindow = [[FColorPickKitAmplificationWindow alloc] init];
         _amplificationWindow.targetWindow = [[UIApplication sharedApplication].delegate window];
         _amplificationWindow.amplificationSize = kAmplificationSize; //设置宽度
-        _amplificationWindow.amplification = 4.0;
+        _amplificationWindow.amplification = 8.0;
     }
     return _amplificationWindow;
 }
 
 - (UILabel *)colorLabel {
     if (!_colorLabel) {
-        _colorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, FToolKitColorPickKitSize, 20)];
+        _colorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, FToolKitColorPickKitSize, 20)];
         _colorLabel.backgroundColor = [UIColor clearColor];
         _colorLabel.textColor = [UIColor redColor];
         _colorLabel.textAlignment = NSTextAlignmentCenter;

@@ -61,15 +61,13 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
 - (UILabel *)iconLabel {
     if (!_iconLabel) {
         _iconLabel = [[UILabel alloc] initWithFrame:self.bounds];
-        _iconLabel.text = @"调";
-        _iconLabel.textColor = [UIColor greenColor];
-        _iconLabel.backgroundColor = [UIColor clearColor];
-        _iconLabel.font = [UIFont systemFontOfSize:20];
+        _iconLabel.text = @"調";
+        _iconLabel.textColor = [UIColor blackColor];
+        _iconLabel.backgroundColor = [UIColor whiteColor];
+        _iconLabel.font = [UIFont boldSystemFontOfSize:20];
         _iconLabel.textAlignment = NSTextAlignmentCenter;
         _iconLabel.layer.cornerRadius = FToolKitHeight/2;
         _iconLabel.layer.masksToBounds = YES;
-        _iconLabel.layer.borderWidth = 1.5;
-        _iconLabel.layer.borderColor = [UIColor blueColor].CGColor;
     }
     return _iconLabel;
 }
@@ -153,11 +151,11 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
         lastPoint = CGPointMake(panPoint.x, panPoint.y);
         
         if (CGRectContainsPoint(self.deletedRect, self.center)) {
-            self.iconLabel.text = @"删";
+            self.iconLabel.text = @"刪";
             self.iconLabel.textColor = [UIColor redColor];
         }else{
-            self.iconLabel.text = @"调";
-            self.iconLabel.textColor = [UIColor greenColor];
+            self.iconLabel.text = @"調";
+            self.iconLabel.textColor = [UIColor blackColor];
         }
         
     } else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
