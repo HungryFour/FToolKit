@@ -88,9 +88,9 @@
 
 @end
 
-static CGFloat const FToolKitColorPickKitSize = 120;
+static CGFloat const FToolKitColorPickKitSize = 125;
 
-static CGFloat const kAmplificationSize = 114;
+static CGFloat const kAmplificationSize = 125;
 
 @implementation FColorPickKit
 
@@ -110,7 +110,7 @@ static CGFloat const kAmplificationSize = 114;
         self.windowLevel = UIWindowLevelStatusBar + 11.f;
         [self addSubview:self.iconImageView];
         [self addSubview:self.colorLabel];
-        self.deletedRect = CGRectMake(0, FToolKitScreenHeight-2*FToolKitColorPickKitSize, FToolKitScreenWidth, 2*FToolKitColorPickKitSize);
+        self.deletedRect = CGRectMake(0, FToolKitScreenHeight-FToolKitColorPickKitSize, FToolKitScreenWidth, FToolKitColorPickKitSize);
         self.hidden = YES;
         [self addGesture];
     }
@@ -119,8 +119,8 @@ static CGFloat const kAmplificationSize = 114;
 
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
-        _iconImageView = [[UIImageView alloc] initWithImage:[UIImage fToolkit_imageNamed:@"pen_alt_stroke"]];
-        _iconImageView.frame = CGRectMake(FToolKitColorPickKitSize/2, FToolKitColorPickKitSize/2, 44, 44);
+        _iconImageView = [[UIImageView alloc] initWithImage:[UIImage fToolkit_imageNamed:@"magnifying"]];
+        _iconImageView.frame = CGRectMake(-2, -2, 156, 156);
         _iconImageView.contentMode = UIViewContentModeScaleAspectFit;
         _iconImageView.userInteractionEnabled = YES;
         _iconImageView.backgroundColor = [UIColor clearColor];
@@ -150,6 +150,13 @@ static CGFloat const kAmplificationSize = 114;
     return _colorLabel;
 }
 
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
+    if(CGRectContainsPoint(_iconImageView.frame, point)){
+        return YES;
+    }
+    return NO;
+}
+
 //不能让该View成为keyWindow，每一次它要成为keyWindow的时候，都要将appDelegate的window指为keyWindow
 - (void)becomeKeyWindow{
     UIWindow *appWindow = [[UIApplication sharedApplication].delegate window];
@@ -159,7 +166,7 @@ static CGFloat const kAmplificationSize = 114;
 -(void)addGesture{
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(locationChange:)];
     pan.delaysTouchesBegan = YES;
-    [self addGestureRecognizer:pan];
+    [self.iconImageView addGestureRecognizer:pan];
 }
 
 - (void)locationChange:(UIPanGestureRecognizer *)gestureRecognizer{
