@@ -63,10 +63,12 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
         _iconLabel = [[UILabel alloc] initWithFrame:self.bounds];
         _iconLabel.text = @"調";
         _iconLabel.textColor = [UIColor blackColor];
-        _iconLabel.backgroundColor = [UIColor whiteColor];
+        _iconLabel.backgroundColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.6];
         _iconLabel.font = [UIFont boldSystemFontOfSize:20];
         _iconLabel.textAlignment = NSTextAlignmentCenter;
         _iconLabel.layer.cornerRadius = FToolKitHeight/2;
+        _iconLabel.layer.borderWidth = 1;
+        _iconLabel.layer.borderColor = [UIColor blackColor].CGColor;
         _iconLabel.layer.masksToBounds = YES;
     }
     return _iconLabel;
