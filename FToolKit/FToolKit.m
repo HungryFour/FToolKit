@@ -8,6 +8,7 @@
 #import "FToolKit.h"
 #import "FToolKitDefine.h"
 #import "FToolKitTableViewController.h"
+#import "FToolKitFPSIndicator.h"
 
 #define FToolKitWidth  44
 #define FToolKitHeight 44
@@ -77,7 +78,6 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
     [self addGesture];
     self.userInteractionEnabled = YES;
     self.limitRect = CGRectMake(0, IPHONE_NAVIGATIONBAR_HEIGHT, FToolKitScreenWidth, FToolKitScreenHeight-IPHONE_STATUSBAR_HEIGHT-IPHONE_SAFEBOTTOMAREA_HEIGHT-FToolKitHeight-2*FToolKitWidth);
-    self.deletedRect = CGRectMake(0, FToolKitScreenHeight-2*FToolKitWidth, FToolKitScreenWidth, 2*FToolKitWidth);
     self.adsorptionTop = NO;
     self.adsorptionBottom = NO;
 }
@@ -152,7 +152,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
         self.center = CGPointMake(self.center.x + panPoint.x-lastPoint.x, self.center.y+panPoint.y-lastPoint.y);
         lastPoint = CGPointMake(panPoint.x, panPoint.y);
         
-        if (CGRectContainsPoint(self.deletedRect, self.center)) {
+        if (CGRectContainsPoint(FToolKitDeletedRect, self.center)) {
             self.iconLabel.text = @"刪";
             self.iconLabel.textColor = [UIColor redColor];
         }else{
@@ -163,7 +163,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
     } else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         
         // 如果拖动结束后,在删除区域,则进入毁灭程序
-        if (CGRectContainsPoint(self.deletedRect, self.center)) {
+        if (CGRectContainsPoint(FToolKitDeletedRect, self.center)) {
             [self remove];
             return;
         }
@@ -235,6 +235,7 @@ static const CGFloat kUIShowTimeInterval = 0.3;//UI渐变时间
             }
         }
         self.frame = [FToolKit originFrame];
+        [[FToolKitFPSIndicator sharedIndicator] show];
         [keyWindow addSubview:self];
     });
 }

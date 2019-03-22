@@ -82,8 +82,6 @@
 
 @property (nonatomic, assign) CGPoint lastPoint;
 
-@property (nonatomic) CGRect deletedRect;
-
 @property (nonatomic, strong) FColorPickKitAmplificationWindow *amplificationWindow;
 
 @end
@@ -110,7 +108,6 @@ static CGFloat const kAmplificationSize = 125;
         self.windowLevel = UIWindowLevelStatusBar + 11.f;
         [self addSubview:self.iconImageView];
         [self addSubview:self.colorLabel];
-        self.deletedRect = CGRectMake(0, FToolKitScreenHeight-FToolKitColorPickKitSize, FToolKitScreenWidth, FToolKitColorPickKitSize);
         self.hidden = YES;
         [self addGesture];
     }
@@ -189,7 +186,7 @@ static CGFloat const kAmplificationSize = 125;
     } else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         
         // 如果拖动结束后,在删除区域,则进入毁灭程序
-        if (CGRectContainsPoint(self.deletedRect, self.center)) {
+        if (CGRectContainsPoint(FToolKitDeletedRect, self.center)) {
             // 如果拖动结束后,隐藏
             [self remove];
             return;

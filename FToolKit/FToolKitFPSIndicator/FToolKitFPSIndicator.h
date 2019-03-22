@@ -1,5 +1,5 @@
 //
-//  FToolKitFHHFPSIndicator.h
+//  FToolKitFPSIndicator.h
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -9,11 +9,12 @@
 typedef enum {
     FToolKitFPSIndicatorPositionTopLeft,        ///<left-center on statusBar
     FToolKitFPSIndicatorPositionTopRight,       ///<right-center on statusBar
-    FToolKitFPSIndicatorPositionBottomCenter    ///<under the statusBar
+    FToolKitFPSIndicatorPositionBottomCenter,   ///<under the statusBar
+    FToolKitFPSIndicatorPositionCenter          ///center in the Screen
 } FToolKitFPSIndicatorPosition;
 
 
-@interface FToolKitFHHFPSIndicator : NSObject
+@interface FToolKitFPSIndicator : NSObject
 
 #pragma mark - Attribute
 
@@ -22,7 +23,7 @@ typedef enum {
 
 #pragma mark - Initializer
 
-+ (FToolKitFHHFPSIndicator *)sharedIndicator;
++ (FToolKitFPSIndicator *)sharedIndicator;
 
 
 #pragma mark - Access Methods

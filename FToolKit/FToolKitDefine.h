@@ -13,7 +13,7 @@
 
 #define FToolKitScreenWidth [UIScreen mainScreen].bounds.size.width
 #define FToolKitScreenHeight [UIScreen mainScreen].bounds.size.height
-
+#define FToolKitDeletedRect CGRectMake(0, FToolKitScreenHeight-60, FToolKitScreenWidth, 60)
 #define IS_IPHONE_X_Series [FToolKitUtil isIPhoneXSeries]
 #define IPHONE_NAVIGATIONBAR_HEIGHT  (IS_IPHONE_X_Series ? 88 : 64)
 #define IPHONE_STATUSBAR_HEIGHT      (IS_IPHONE_X_Series ? 44 : 20)

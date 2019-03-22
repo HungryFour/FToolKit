@@ -19,7 +19,6 @@ static CGFloat const kViewCheckSize = 44;
 @property (nonatomic, strong) UILabel *topLabel;
 @property (nonatomic, strong) UILabel *rightLabel;
 @property (nonatomic, strong) UILabel *bottomLabel;
-@property (nonatomic) CGRect deletedRect;//删除区域
 
 @end
 
@@ -41,7 +40,6 @@ static CGFloat const kViewCheckSize = 44;
         self.frame = CGRectMake(0, 0, FToolKitScreenWidth, FToolKitScreenHeight);
         self.backgroundColor = [UIColor clearColor];
         self.layer.zPosition = FLT_MAX;
-        self.deletedRect = CGRectMake(0, FToolKitScreenHeight-2*kViewCheckSize, FToolKitScreenWidth, 2*kViewCheckSize);
 
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FToolKitScreenWidth/2-kViewCheckSize/2, FToolKitScreenHeight/2-kViewCheckSize/2, kViewCheckSize, kViewCheckSize)];
         imageView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
@@ -114,7 +112,7 @@ static CGFloat const kViewCheckSize = 44;
     [self setImageViewCenterPoint:centerPoint];
     if(sender.state == UIGestureRecognizerStateEnded) {
         // 如果拖动结束后,在删除区域,则进入毁灭程序
-        if (CGRectContainsPoint(self.deletedRect, self.imageView.center)) {
+        if (CGRectContainsPoint(FToolKitDeletedRect, self.imageView.center)) {
             // 如果拖动结束后,隐藏
             [self remove];
             return;

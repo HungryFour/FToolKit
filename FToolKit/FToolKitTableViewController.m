@@ -22,7 +22,7 @@
 #endif
 
 #import "FColorPickKit.h"
-#import "FToolKitFHHFPSIndicator.h"
+#import "FToolKitFPSIndicator.h"
 #import "FToolKitAlignKit.h"
 
 @interface FToolKitTableViewController ()
@@ -60,7 +60,7 @@
     cell.textLabel.text = [[self titleArray] objectAtIndex:indexPath.row];
     
     if (indexPath.row == 0) {
-        if ([[FToolKitFHHFPSIndicator sharedIndicator] isShowingFps]) {
+        if ([[FToolKitFPSIndicator sharedIndicator] isShowingFps]) {
             cell.detailTextLabel.text = @"关闭";
         }else{
             cell.detailTextLabel.text = @"打开";
@@ -85,12 +85,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     if (indexPath.row == 0) {
-        if (![[FToolKitFHHFPSIndicator sharedIndicator] isShowingFps]) {
-            [[FToolKitFHHFPSIndicator sharedIndicator] show];
-            [[FToolKitFHHFPSIndicator sharedIndicator] setFpsLabelColor:[UIColor redColor]];
-            [FToolKitFHHFPSIndicator sharedIndicator].fpsLabelPosition = FToolKitFPSIndicatorPositionTopLeft;
+        if (![[FToolKitFPSIndicator sharedIndicator] isShowingFps]) {
+            [[FToolKitFPSIndicator sharedIndicator] show];
         }else {
-            [[FToolKitFHHFPSIndicator sharedIndicator] hide];
+            [[FToolKitFPSIndicator sharedIndicator] hide];
         }
         [self cancle];
     }else if (indexPath.row == 1) {
