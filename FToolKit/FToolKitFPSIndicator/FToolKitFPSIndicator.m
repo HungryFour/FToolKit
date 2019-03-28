@@ -14,7 +14,7 @@
 #define PADDING_RIGHT_FPSView (9)
 #define PADDING_CENTER_FPSView (31)
 #elif TARGET_OS_IPHONE  // iPhone
-#define PADDING_LEFT_FPSViewFPSViewFPSView (36)
+#define PADDING_LEFT_FPSView (36)
 #define PADDING_RIGHT_FPSView (-3)
 #define PADDING_CENTER_FPSView (3)
 #endif

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                   = 'FToolKit'
-  s.version                = '1.3.1'
+  s.version                = '1.3.2'
   s.description            = 'iOS Debug Tools'
   s.summary                = 'iOS Debug Tools'
   s.homepage               = 'https://github.com/wjmwjmwb/FToolKit'
