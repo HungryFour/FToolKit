@@ -13,6 +13,13 @@ typedef enum {
     FToolKitFPSIndicatorPositionCenter          ///center in the Screen
 } FToolKitFPSIndicatorPosition;
 
+@interface FToolKitFPSView : UIView
+
+@property (nonatomic, strong) NSString *text;
+
+@property (nonatomic, strong) UIColor *textColor;
+
+@end
 
 @interface FToolKitFPSIndicator : NSObject
 
@@ -27,9 +34,6 @@ typedef enum {
 
 
 #pragma mark - Access Methods
-
-- (void)setFpsLabelColor:(UIColor *)color;
-
 
 - (void)show;
 

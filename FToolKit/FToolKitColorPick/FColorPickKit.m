@@ -130,7 +130,7 @@ static CGFloat const kAmplificationSize = 125;
         _amplificationWindow = [[FColorPickKitAmplificationWindow alloc] init];
         _amplificationWindow.targetWindow = [[UIApplication sharedApplication].delegate window];
         _amplificationWindow.amplificationSize = kAmplificationSize; //设置宽度
-        _amplificationWindow.amplification = 8.0;
+        _amplificationWindow.amplification = 10.0;
     }
     return _amplificationWindow;
 }
