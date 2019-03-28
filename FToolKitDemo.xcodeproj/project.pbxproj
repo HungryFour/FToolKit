@@ -300,7 +300,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh",
 				"${PODS_ROOT}/../FToolKit.bundle",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/EmptyContentViews/RLMBrowserEmptyContentView.xib",
 				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/FooterView/RLMBrowserSchemaPreviewView.xib",
@@ -331,7 +331,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C52A0E7A6C54DE143874354F /* [CP] Check Pods Manifest.lock */ = {
