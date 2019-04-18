@@ -3,7 +3,7 @@ language: objective-c
 osx_image: xcode10.1
 addons:
   homebrew:
-    update: true
+    update: false
     packages:
   
 install: true
