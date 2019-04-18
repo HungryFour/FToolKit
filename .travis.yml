@@ -1,13 +1,14 @@
-language: objective-c 
 
-xcode_project: FToolKitDemo.xcworkspace # 项目文件相对于.travis.yml文件的路径
-
-xcode_scheme: FToolKitDemoTests #你需要集成测试的scheme
-
-xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
-
-podfile: Podfile
-
-pod install
-
+language: objective-c
+osx_image: xcode10.1
+addons:
+  homebrew:
+    update: true
+    packages:
+  
+install: true
+before_script:
+ 
+script:
+  - echo ok
 
