@@ -1,6 +1,16 @@
 language: objective-c
 osx_image: xcode10
 
+before_deploy:
+- env
+- locale
+- gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+- xcpretty --version
+- pod --version
+- pod setup
+- pod repo update --silent
+
 deploy:
   provider: releases
   api_key: ${GITHUBOAUTHTOKEN}
@@ -10,12 +20,4 @@ deploy:
     tags: true
 
 after_deploy:
-- env
-- locale
-- gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-- xcpretty --version
-- pod --version
-- pod setup
-- pod repo update --silent
 - pod lib lint --allow-warning --no-cleans
