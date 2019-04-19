@@ -19,4 +19,4 @@ before_install:
 - pod setup
 - pod repo update --silent
 script:
-- pod lib lint --allow-warnings
+- pod lib lint --allow-warning --no-cleans
