@@ -1,18 +1,22 @@
 language: objective-c
 osx_image: xcode10
 
+deploy:
+  provider: releases
+  api_key: ${GITHUBOAUTHTOKEN}
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true
+
 before_install:
-- gem install xcpretty --no-document
 - env
 - locale
 - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+- xcpretty --version
 - pod --version
 - pod setup
 - pod repo update --silent
 script:
 - pod lib lint --allow-warnings
-deploy:
-  provider: script
-  script: ./scripts/push.sh
-  on:
-    tags: true
