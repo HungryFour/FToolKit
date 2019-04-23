@@ -10,6 +10,9 @@ before_install:
 - pod --version
 - pod setup
 - pod repo update --silent
+script:
+
+
 
 deploy:
   provider: releases
@@ -20,4 +23,4 @@ deploy:
     tags: true
 
 after_deploy:
-- pod lib lint --allow-warning --no-cleans
+- pod lib lint --allow-warnings --no-clean
