@@ -15,12 +15,6 @@
 #import "FLEX.h"
 #endif
 
-#if __has_include(<RealmBrowserKit/RealmBrowserKit.h>)
-#import <RealmBrowserKit/RLMBrowserViewController.h>
-#else
-#import "RLMBrowserViewController.h"
-#endif
-
 #import "FColorPickKit.h"
 #import "FToolKitFPSIndicator.h"
 #import "FToolKitAlignKit.h"
@@ -42,7 +36,7 @@
 }
 
 - (NSArray *)titleArray{
-    return @[@"帧率", @"组件检查", @"Realm数据库", @"颜色吸管", @"对齐标尺"];
+    return @[@"帧率", @"组件检查", @"数据库(暂时不支持)", @"颜色吸管", @"对齐标尺"];
 }
 #pragma mark - Table view data source
 
@@ -99,10 +93,7 @@
         }
         [self cancle];
     }else if (indexPath.row == 2) {
-        RLMBrowserViewController *controller = [[RLMBrowserViewController alloc] init];
-        [self presentViewController:controller animated:YES completion:^{
-            
-        }];
+        
     }else if (indexPath.row == 3) {
         [[FColorPickKit shareInstance] show];
         [self cancle];

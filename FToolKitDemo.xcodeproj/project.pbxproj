@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -298,36 +298,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources.sh",
-				"${PODS_ROOT}/../FToolKit.bundle",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/EmptyContentViews/RLMBrowserEmptyContentView.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/FooterView/RLMBrowserSchemaPreviewView.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/HeaderViews/RLMBrowserNavigationTitleView.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/HeaderViews/RLMBrowserRealmHeaderView.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/ObjectListTableViewCell/RLMBrowserObjectListContentView.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/ObjectTableViewCellContentView/RLMBrowserObjectContentView.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/PropertyTableViewCell/RLMBrowserPropertyTableViewCell.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/RealmSchemaTableViewCell/RLMBrowserSchemaTableViewCell.xib",
-				"${PODS_ROOT}/RealmBrowserKit/RealmBrowser/Views/TableViewCells/RealmTableViewCell/RLMBrowserRealmTableViewCell.xib",
-				"${PODS_CONFIGURATION_BUILD_DIR}/TOSearchBar/TOSearchBarBundle.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FToolKit.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserEmptyContentView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserSchemaPreviewView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserNavigationTitleView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserRealmHeaderView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserObjectListContentView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserObjectContentView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserPropertyTableViewCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserSchemaTableViewCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RLMBrowserRealmTableViewCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TOSearchBarBundle.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-FToolKitDemo/Pods-FToolKitDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -539,6 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FToolKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,6 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FToolKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

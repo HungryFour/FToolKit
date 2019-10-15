@@ -9,7 +9,6 @@ target 'FToolKitDemo' do
      pod 'FToolKit', :path => '.'
      pod 'FLEX', '~> 2.0'
      pod 'MLeaksFinder'
-     pod 'RealmBrowserKit'
 end
 
 post_install do |installer|
